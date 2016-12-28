@@ -23,6 +23,10 @@ You will need the following things properly installed on your computer.
 * `npm install`
 * `bower install`
 
+## Configuration
+
+* You need to edit the config/environment.js to indicate the URL, port and credentials to connect to your API.
+
 ## Running / Development
 
 * `ember serve`
