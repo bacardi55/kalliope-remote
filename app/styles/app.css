@@ -1,0 +1,23 @@
+.ellipsis {
+  text-overflow: ellipsis;
+
+  /* Required for text-overflow to do anything */
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+#loading {
+  opacity:0.45;
+  -moz-opacity:0.45;
+  filter:alpha(opacity=45);
+  display: block;
+  height: 100%;
+  width: 100%;
+  margin:auto;
+}
+
+#loading img {
+  width: 30%;
+  height: 30%;
+  margin:auto;
+}

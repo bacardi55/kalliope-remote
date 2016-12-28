@@ -46,5 +46,12 @@ module.exports = function(environment) {
 
   }
 
+  ENV.APP.KALLIOPE = {
+    HOST: 'http://kalliope',
+    PORT: '5000',
+    LOGIN: 'admin',
+    PASS: 'secret'
+  };
+
   return ENV;
 };
