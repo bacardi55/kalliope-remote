@@ -1,0 +1,7 @@
+<div class="row">
+  {{#each model as |synapse|}}
+    {{#if synapse.hidden}}
+      {{synapse-list synapse=synapse ignore=true}}
+    {{/if}}
+  {{/each}}
+</div>

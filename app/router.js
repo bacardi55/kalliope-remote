@@ -9,6 +9,7 @@ const Router = Ember.Router.extend({
 Router.map(function() {
   this.route('synapses');
   this.route('about');
+  this.route('ignored');
 });
 
 export default Router;

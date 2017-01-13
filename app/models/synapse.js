@@ -14,5 +14,14 @@ export default DS.Model.extend({
       }
     });
     return valid;
-  })
+  }),
+
+  hidden: Ember.computed('name', function() {
+    var tmp = localStorage.getItem('kr:ignored-synapses');
+    if (tmp == null || tmp.indexOf(this.get('name')) === -1) {
+      return false;
+    }
+    return true;
+  }),
+
 });

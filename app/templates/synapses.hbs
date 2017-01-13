@@ -1,5 +1,7 @@
 <div class="row">
   {{#each model as |synapse|}}
-    {{synapse-list synapse=synapse}}
+    {{#unless synapse.hidden}}
+      {{synapse-list synapse=synapse}}
+    {{/unless}}
   {{/each}}
 </div>
