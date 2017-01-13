@@ -1,22 +1,23 @@
-<div class="container">
-	{{#bs-navbar position="fixed-top" as |navbar|}}
-		<div class="navbar-header">
-			{{#navbar.toggle}}
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			{{/navbar.toggle}}
-			<a class="navbar-brand" href="#">Kalliope Remote</a>
-		</div>
-		{{#navbar.content}}
-			{{#navbar.nav as |nav|}}
-				{{#nav.item}}{{#link-to "synapses"}}Synapses{{/link-to}}{{/nav.item}}
-				{{#nav.item}}{{#link-to "about"}}About{{/link-to}}{{/nav.item}}
-			{{/navbar.nav}}
-		{{/navbar.content}}
-	{{/bs-navbar}}
+{{#bs-navbar position="fixed-top" as |navbar|}}
+	<div class="navbar-header">
+		{{#navbar.toggle}}
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		{{/navbar.toggle}}
+		<a class="navbar-brand" href="#">Kalliope Remote2</a>
+	</div>
+	{{#navbar.content}}
+		{{#navbar.nav as |nav|}}
+			{{#nav.item}}{{#link-to "synapses"}}Synapses{{/link-to}}{{/nav.item}}
+			{{#nav.item}}{{#link-to "about"}}About{{/link-to}}{{/nav.item}}
+			{{#nav.item}}{{#link-to "ignored"}}Ignored synapses{{/link-to}}{{/nav.item}}
+		{{/navbar.nav}}
+	{{/navbar.content}}
+{{/bs-navbar}}
 
+<div class="container">
   <div class="container-fluid body">
     {{outlet}}
   </div>

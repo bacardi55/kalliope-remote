@@ -1,6 +1,9 @@
+body {
+    padding-top: 65px;
+}
+
 .ellipsis {
   text-overflow: ellipsis;
-
   /* Required for text-overflow to do anything */
   white-space: nowrap;
   overflow: hidden;
@@ -20,4 +23,14 @@
   width: 30%;
   height: 30%;
   margin:auto;
+}
+
+.thumbnail {
+  text-align:center;
+}
+
+.thumbnail img {
+  border-radius: 25px;
+  border: 2px solid #000;
+  padding: 20px;
 }
