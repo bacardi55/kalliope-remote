@@ -13,10 +13,10 @@ What is does know:
 * List all synapse
 * Allow synapse without arguments in their order (no {{ query }} or similar).
 * Disable "launch" button for orders with arguments.
+* Leverage the local browser storage to allow "ignoring" synapse to only list needed ones.
 
 What is next to do:
 * Enable using dynamic order (with an input form)
-* Leverage the local browser storage to allow "ignoring" synapse to only list needed ones.
 
 
 This README outlines the details of collaborating on this Ember application.
