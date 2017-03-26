@@ -8,12 +8,20 @@
 		{{/navbar.toggle}}
 		<a class="navbar-brand" href="#">Kalliope Remote2</a>
 	</div>
+
 	{{#navbar.content}}
 		{{#navbar.nav as |nav|}}
-			{{#nav.item}}{{#link-to "synapses"}}Synapses{{/link-to}}{{/nav.item}}
+            {{#nav.dropdown tagName="li" as |dd|}}
+                {{#dd.toggle}}List{{/dd.toggle}}
+                {{#dd.menu as |ddm|}}
+                    {{#ddm.item}}{{#link-to "synapses"}}Synapses{{/link-to}}{{/ddm.item}}
+                    {{#ddm.item}}{{#link-to "ignored"}}Ignored synapses{{/link-to}}{{/ddm.item}}
+                {{/dd.menu}}
+            {{/nav.dropdown}}
 			{{#nav.item}}{{#link-to "about"}}About{{/link-to}}{{/nav.item}}
-			{{#nav.item}}{{#link-to "ignored"}}Ignored synapses{{/link-to}}{{/nav.item}}
 		{{/navbar.nav}}
+
+        {{send-order}}
 	{{/navbar.content}}
 {{/bs-navbar}}
 
