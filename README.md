@@ -1,5 +1,6 @@
 # kalliope-remote
-An emberJS SinglePageApp to launch [Kalliope](https://github.com/kalliope-project/kalliope) synapses
+
+An simple "Single Page Application" writen in emberJS to launch [Kalliope](https://github.com/kalliope-project/kalliope) synapses and orders.
 
 ![Kalliope sample](http://files.penchetoiettous.se/kalliopeember.png)
 
@@ -7,24 +8,30 @@ An emberJS SinglePageApp to launch [Kalliope](https://github.com/kalliope-projec
 
 This EmberJS app will retrive data from the [Kalliope API](https://github.com/kalliope-project/kalliope/blob/dev/Docs/rest_api.md) and let you fire your synapses from the web page.
 
-For this app to work, you need to look at the patch for Kalliope API [here](https://github.com/kalliope-project/kalliope/issues/155) before the API gets actually fixed.
+It also let you run text order (via a simple input form), to enter the same order you would say vocally to kalliopé, eg: "what time is it".
+
+
+For this app to work, you need to enable CORS request for your host (or all) in your [Kalliopé settings.yml](https://github.com/kalliope-project/kalliope/blob/dev/Docs/settings.md)
+
 
 What is does know:
 * List all synapse
 * Allow synapse without arguments in their order (no {{ query }} or similar).
 * Disable "launch" button for orders with arguments.
+* Allow full text orders
 * Leverage the local browser storage to allow "ignoring" synapse to only list needed ones.
 
 What is next to do:
+* Record an audio order to be sent to kalliopé
 * Enable using dynamic order (with an input form)
 
+
+# kalliope-ember
 
 This README outlines the details of collaborating on this Ember application.
 A short introduction of this app could easily go here.
 
-## Contribution
-
-### Prerequisites
+## Prerequisites
 
 You will need the following things properly installed on your computer.
 
@@ -41,34 +48,30 @@ You will need the following things properly installed on your computer.
 * `npm install`
 * `bower install`
 
-### Configuration
-
-* You need to edit the config/environment.js to indicate the URL, port and credentials to connect to your API.
-
-### Running / Development
+## Running / Development
 
 * `ember serve`
 * Visit your app at [http://localhost:4200](http://localhost:4200).
 
-#### Code Generators
+### Code Generators
 
 Make use of the many generators for code, try `ember help generate` for more details
 
-#### Running Tests
+### Running Tests
 
 * `ember test`
 * `ember test --server`
 
-#### Building
+### Building
 
 * `ember build` (development)
 * `ember build --environment production` (production)
 
-#### Deploying
+### Deploying
 
 Specify what it takes to deploy your app.
 
-### Further Reading / Useful Links
+## Further Reading / Useful Links
 
 * [ember.js](http://emberjs.com/)
 * [ember-cli](https://ember-cli.com/)
