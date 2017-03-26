@@ -42,7 +42,7 @@ export default Ember.Component.extend({
         url: ENV.APP.KALLIOPE.HOST + ':' + ENV.APP.KALLIOPE.PORT + '/synapses/' + synapse.get('name'),
         type: 'POST'
       }).then(function(response) {
-        //TODO.
+        //TODO: When kalliopé will return the response of the neuron instead of the brain used.
         console.log('response!');
         console.log(response);
       });
