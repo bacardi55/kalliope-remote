@@ -3,4 +3,6 @@
         {{input type="text" value=text_order class="form-control" placeholder="Send text order" required="required"}}
     </div>
     <button {{action 'send_order'}} class="btn btn-default">Send</button>
+    <button {{action 'record_audio_order'}} id="start_record_audio" class="glyphicon glyphicon-record btn btn-danger"></button>
+    <button {{action 'stop_audio_order'}} id="stop_record_audio" class="hidden glyphicon glyphicon-stop btn btn-success"></button>
 </form>
