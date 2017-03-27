@@ -26,10 +26,10 @@ What is does know:
 * Allow synapse without arguments in their order (no {{ query }} or similar).
 * Disable "launch" button for orders with arguments.
 * Allow full text orders
+* Record an audio order to be sent to kalliopé
 * Leverage the local browser storage to allow "ignoring" synapse to only list needed ones.
 
 What is next to do:
-* Record an audio order to be sent to kalliopé
 * Enable using dynamic order (with an input form)
 
 
