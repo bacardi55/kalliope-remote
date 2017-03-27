@@ -1,11 +1,35 @@
 <div class="jumbotron">
-  <h2>About this page</h2>
+  <h2>About Kalliope remote</h2>
   <p>
-    Simple EmberJS application to use kalliope remotely.
+    A simple EmberJS application to use kalliope remotely.
   </p>
   <p>
     {{#link-to 'synapses' class="button"}}
       Synapses page
     {{/link-to}}
   </p>
+</div>
+<div>
+<p>This EmberJS app will retrive data from the Kalliope API and let you fire your synapses from the web page.</p>
+
+<p>It also let you run text order (via a simple input form), to enter the same order you would say vocally to kalliopé, eg: "what time is it".</p>
+
+<p>For this app to work, you need to enable CORS request for your host (or all) in your Kalliopé settings.yml</p>
+
+<p>What is does know:
+
+List all synapse
+<ul>
+    <li>Allow synapse without arguments in their order (no {{ query  }} or similar).</li>
+    <li>Disable "launch" button for orders with arguments.</li>
+    <li>Allow full text orders</li>
+    <li>Leverage the local browser storage to allow "ignoring" synapse to only list needed ones.</li>
+</ul>
+
+What is next to do:
+<ul>
+    <li>Record an audio order to be sent to kalliopé</li>
+    <li>Enable using dynamic order (with an input form)</li>
+</ul>
+</p>
 </div>
