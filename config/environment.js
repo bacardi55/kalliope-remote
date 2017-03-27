@@ -29,9 +29,21 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV.APP.KALLIOPE = {
+      HOST: 'http://localhost',
+      PORT: '5000',
+      LOGIN: 'admin',
+      PASS: 'secret'
+    };
   }
 
   if (environment === 'test') {
+    ENV.APP.KALLIOPE = {
+      HOST: 'http://kalliope',
+      PORT: '5000',
+      LOGIN: 'admin',
+      PASS: 'secret'
+    };
     // Testem prefers this...
     ENV.locationType = 'none';
 
@@ -43,15 +55,14 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
+    ENV.locationType = 'hash';
+    ENV.APP.KALLIOPE = {
+      HOST: 'http://kalliope',
+      PORT: '5000',
+      LOGIN: 'admin',
+      PASS: 'secret'
+    };
   }
-
-  ENV.APP.KALLIOPE = {
-    HOST: 'http://kalliope',
-    PORT: '5000',
-    LOGIN: 'admin',
-    PASS: 'secret'
-  };
 
   return ENV;
 };
