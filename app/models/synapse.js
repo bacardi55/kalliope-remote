@@ -24,4 +24,8 @@ export default DS.Model.extend({
     return true;
   }),
 
+    displayed_name: Ember.computed('name', function(){
+        return this.get('name').replace(/-/g, ' ');
+    })
+
 });

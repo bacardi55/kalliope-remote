@@ -2,6 +2,7 @@ import Ember from 'ember';
 import ENV from 'kalliope-ember/config/environment';
 
 export default Ember.Component.extend({
+  tagName: 'tr',
   load_ignored_synapses: function() {
     if (typeof(Storage) !== "undefined") {
       var tmp = localStorage.getItem('kr:ignored-synapses');

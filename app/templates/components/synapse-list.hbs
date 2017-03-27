@@ -1,24 +1,30 @@
-<div class="col-sm-6 col-md-3">
-	<div class="thumbnail">
-		<h3 class="ellipsis">{{synapse.name}}</h3>
-		<img src="assets/images/kalliope.png" alt="synapse" />
+<th>
+    {{#if synapse.launchable}}
+        {{#bs-button type="primary" size="sm" icon="glyphicon glyphicon-play" onClick=(action "launch_synapse" synapse)}}  {{/bs-button}}
+    {{else}}
+        {{#bs-button type="primary" size="sm" icon="glyphicon glyphicon-play" onClick=(action "launch_synapse" synapse) disabled="disabled"}} {{/bs-button}}
+    {{/if}}
+</th>
+<td>{{synapse.displayed_name}}</td>
+<td>{{synapse.signals.0.order}}
+    {{#bs-button type="default" size="xs" icon="glyphicon glyphicon-info-sign" data-toggle="collapse" data-target="#collapse_orders_{{synapse.name}}" aria-expanded="false" aria-controls="collapse_orders_{{synapse.name}}"}} 
+        {{#bs-tooltip}}
+            {{#each synapse.signals as |signal index|}}
+                {{#if index}}
+                    {{#if signal.order}}
+                        - {{signal.order}} <br />
+                        {{break}}
+                    {{/if}}
+                {{/if}}
+            {{/each}}
+        {{/bs-tooltip}}
+    {{/bs-button}}
+</td>
+<td>
+    {{#if ignore}}
+        <p>{{#bs-button type="primary" size="xs" icon="glyphicon glyphicon-eye-open" onClick=(action "unignore_synapse" synapse)}} {{/bs-button}}</p>
+    {{/if}}
     {{#unless ignore}}
-  		{{#if synapse.launchable}}
-				{{#bs-button type="primary" size="lg" icon="glyphicon glyphicon-play" onClick=(action "launch_synapse" synapse)}} Launch {{/bs-button}}
-			{{else}}
-				{{#bs-button type="primary" size="lg" icon="glyphicon glyphicon-play" onClick=(action "launch_synapse" synapse) disabled="disabled"}} Launch {{/bs-button}}
-			{{/if}}
+        <p>{{#bs-button type="warning" size="xs" icon="glyphicon glyphicon-eye-close" onClick=(action "ignore_synapse" synapse)}} {{/bs-button}}</p>
     {{/unless}}
-		<div class="caption">
-			<p class="neurons"><span>Neurons</span>: todo</p>
-			<p class="signals"><span>Signals</span>: todo</p>
-			{{#unless ignore}}
-				<p>{{#bs-button type="warning" size="xs" icon="glyphicon glyphicon-eye-close" onClick=(action "ignore_synapse" synapse)}} Ignore {{/bs-button}}</p>
-      {{/unless}}
-
-      {{#if ignore}}
-				<p>{{#bs-button type="primary" size="xs" icon="glyphicon glyphicon-eye-close" onClick=(action "unignore_synapse" synapse)}} Un-ignore {{/bs-button}}</p>
-      {{/if}}
-		</div>
-	</div>
-</div>
+</td>

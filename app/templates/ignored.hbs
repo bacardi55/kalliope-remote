@@ -1,7 +1,21 @@
-<div class="row">
-  {{#each model as |synapse|}}
-    {{#if synapse.hidden}}
-      {{synapse-list synapse=synapse ignore=true}}
-    {{/if}}
-  {{/each}}
+<div class="table-responsive">
+    <table class="table table-over table-striped">
+        <caption>Kalliopé available synapses</caption>
+        <thead>
+            <tr>
+                <th>Launch</th>
+                <th>Name</th>
+                <th>Orders</th>
+                <th>Enable</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {{#each model as |synapse|}}
+                {{#if synapse.hidden}}
+                    {{synapse-list synapse=synapse ignore=true}}
+                {{/if}}
+            {{/each}}
+        </tbody>
+    </table>
 </div>
