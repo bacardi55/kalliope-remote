@@ -40,6 +40,8 @@ export default Ember.Component.extend({
     actions: {
         send_order: function() {
             var order = this.get('text_order');
+            console.log(order);
+            Ember.Logger.assert(false, order);
             if (order) {
                 Ember.$.ajax({
                   headers: {
@@ -52,6 +54,9 @@ export default Ember.Component.extend({
                   type: 'POST'
                 }).then(function(response) {
                   //TODO: When kalliopé will return the response of the neuron instead of the brain used.
+                  Ember.Logger.assert(false, error);
+                  console.log('HERE!!!');
+                  console.log(response);
                 });
             }
         },

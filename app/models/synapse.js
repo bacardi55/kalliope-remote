@@ -9,11 +9,20 @@ export default DS.Model.extend({
     // For now, we disable signals that have parameter in their order.
     var valid = true;
     this.get('signals').forEach(function(item, index, enumerable) {
-      if (item.order.match(/{{[^}]*}}/)){
+      if (item.name == "order" && item.parameters.match(/{{[^}]*}}/)){
         valid = false;
       }
     });
     return valid;
+  }),
+
+  isOrder: Ember.computed('signals', function() {
+    this.get('signals').forEach(function(item, index, enumerable) {
+      if (item.name == 'order') {
+        return true;
+      }
+    });
+    return false;
   }),
 
   hidden: Ember.computed('name', function() {
@@ -24,8 +33,8 @@ export default DS.Model.extend({
     return true;
   }),
 
-    displayed_name: Ember.computed('name', function(){
-        return this.get('name').replace(/-/g, ' ');
-    })
+  displayed_name: Ember.computed('name', function(){
+    return this.get('name').replace(/-/g, ' ');
+  })
 
 });

@@ -7,18 +7,13 @@
 </th>
 <td>{{synapse.displayed_name}}</td>
 <td>{{synapse.signals.0.order}}
-    {{#bs-button type="default" size="xs" icon="glyphicon glyphicon-info-sign" data-toggle="collapse" data-target="#collapse_orders_{{synapse.name}}" aria-expanded="false" aria-controls="collapse_orders_{{synapse.name}}"}} 
+      {{#bs-button type="default" size="xs" icon="glyphicon glyphicon-info-sign" data-toggle="collapse" data-target="#collapse_orders_{{synapse.name}}" aria-expanded="false" aria-controls="collapse_orders_{{synapse.name}}"}} 
         {{#bs-tooltip}}
-            {{#each synapse.signals as |signal index|}}
-                {{#if index}}
-                    {{#if signal.order}}
-                        - {{signal.order}} <br />
-                        {{break}}
-                    {{/if}}
-                {{/if}}
-            {{/each}}
+          {{#each synapse.signals as |signal index|}}
+              - {{signal.parameters}} <br />
+          {{/each}}
         {{/bs-tooltip}}
-    {{/bs-button}}
+      {{/bs-button}}
 </td>
 <td>
     {{#if ignore}}

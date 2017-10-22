@@ -1,9 +1,10 @@
-/* jshint node: true */
+/* eslint-env node */
+'use strict';
 
 module.exports = function(environment) {
-  var ENV = {
+  let ENV = {
     modulePrefix: 'kalliope-ember',
-    environment: environment,
+    environment,
     rootURL: '/',
     locationType: 'auto',
     EmberENV: {
@@ -24,11 +25,12 @@ module.exports = function(environment) {
   };
 
   if (environment === 'development') {
-    // ENV.APP.LOG_RESOLVER = true;
-    // ENV.APP.LOG_ACTIVE_GENERATION = true;
-    // ENV.APP.LOG_TRANSITIONS = true;
-    // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
-    // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV.APP.LOG_RESOLVER = true;
+    ENV.APP.LOG_ACTIVE_GENERATION = true;
+    ENV.APP.LOG_TRANSITIONS = true;
+    ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
+    ENV.APP.LOG_VIEW_LOOKUPS = true;
+
     ENV.APP.KALLIOPE = {
       HOST: 'http://localhost',
       PORT: '5000',
@@ -38,12 +40,6 @@ module.exports = function(environment) {
   }
 
   if (environment === 'test') {
-    ENV.APP.KALLIOPE = {
-      HOST: 'http://kalliope',
-      PORT: '5000',
-      LOGIN: 'admin',
-      PASS: 'secret'
-    };
     // Testem prefers this...
     ENV.locationType = 'none';
 
@@ -55,13 +51,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    ENV.locationType = 'hash';
-    ENV.APP.KALLIOPE = {
-      HOST: 'http://kalliope',
-      PORT: '5000',
-      LOGIN: 'admin',
-      PASS: 'secret'
-    };
+    // here you can enable a production-specific feature
   }
 
   return ENV;
