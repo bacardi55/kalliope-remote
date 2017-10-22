@@ -1,5 +1,7 @@
 # kalliope-remote
 
+**At the moment, since the 2 upgrades audio is broken on 0.4 version but will be fixed soon**
+
 An simple "Single Page Application" writen in emberJS to launch [Kalliope](https://github.com/kalliope-project/kalliope) synapses and orders.
 
 ![Kalliope sample](Doc/assets/homepage.png)
